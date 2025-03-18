@@ -16,7 +16,8 @@ let permalink = "https://www.hlokomela.org.za/";
 
 // Images
 import kwela from "../images/kwela.jpg";
-import coverup from "../images/coverup.jpg";
+import healthcard from "../images/healthcard2025advert.jpg";
+import babyclinic from "../images/babyclinic2025.jpg";
 
 // Icons
 import FileIcon from "../images/icons/file.astro";
@@ -28,11 +29,6 @@ function sortByPublishDate(a, b) {
     new Date(a.frontmatter.publishDate).valueOf()
   );
 }
-
-// Static content
-import coverUpEnglish from "../static/coverupenglish.pdf";
-import coverUpSepedi from "../static/coverupsepedi.pdf";
-import coverUpXitsonga from "../static/coverupxitsonga.pdf";
 
 // Data Fetching: List all Markdown posts in the repo.
 let allMedia = await Astro.glob("./media/*.md");
@@ -76,37 +72,12 @@ allProjectVideos = allProjectVideos.sort(sortByPublishDate);
           >
             <div class="md:w-1/2 lg:w-2/3 h-64 h-full md:h-auto mb-10">
               <section>
-                <img class="w-[26rem] h-full" src={coverup} alt="Cover Up" />
+                <img class="w-[26rem] h-full" src={healthcard} alt="Cover Up" />
               </section>
             </div>
-            <div class="md:w-1/2 lg:w-2/3 md:h-auto pl-20 pr-20 m-10">
+            <div class="md:w-1/2 lg:w-2/3 h-64 h-full md:h-auto mb-10">
               <section>
-                <ul>
-                  <li>
-                    <a
-                      class="flex p-5 text-xl md:hover:text-[#5db1bd]"
-                      href={coverUpEnglish}
-                    >
-                      <FileIcon /> 'COVER UP' - ENGLISH
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      class="flex p-5 text-xl md:hover:text-[#5db1bd]"
-                      href={coverUpSepedi}
-                    >
-                      <FileIcon /> COVER UP' - SEPEDI
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      class="flex p-5 text-xl md:hover:text-[#5db1bd]"
-                      href={coverUpXitsonga}
-                    >
-                      <FileIcon /> COVER UP' - XITSONGA
-                    </a>
-                  </li>
-                </ul>
+                <img class="w-[26rem] h-full" src={babyclinic} alt="Cover Up" />
               </section>
             </div>
           </div>

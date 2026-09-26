@@ -16,8 +16,9 @@ let permalink = "https://www.hlokomela.org.za/";
 
 // Images
 import kwela from "../images/kwela.jpg";
-import healthcard from "../images/healthcard2025advert.jpg";
-import babyclinic from "../images/babyclinic2025.jpg";
+
+let advertsContent = await Astro.glob("../content/adverts.md");
+let { healthcard, fluvaccine } = advertsContent[0].frontmatter;
 
 // Icons
 import FileIcon from "../images/icons/file.astro";
@@ -77,7 +78,7 @@ allProjectVideos = allProjectVideos.sort(sortByPublishDate);
             </div>
             <div class="md:w-1/2 lg:w-2/3 h-64 h-full md:h-auto mb-10">
               <section>
-                <img class="w-[26rem] h-full" src={babyclinic} alt="Cover Up" />
+                <img class="w-[26rem] h-full" src={fluvaccine} alt="Cover Up" />
               </section>
             </div>
           </div>

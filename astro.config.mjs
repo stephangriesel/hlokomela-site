@@ -107,16 +107,66 @@ export default defineConfig({
             folder: "src/pages/articlelinks",
             create: true,
             delete: true,
-            sortable_fields: ["commit_date", "title", "language.en"],
+            sortable_fields: ["publishDate", "commit_date", "title", "language.en"],
             fields: [
               { name: "title", widget: "string", label: "Post Title" },
               { name: "link", widget: "string", label: "Article Link" },
+              {
+                name: "publishDate",
+                widget: "datetime",
+                label: "Year",
+                format: "YYYY-MM-DD",
+                date_format: "YYYY",
+                time_format: false,
+                picker_utc: true,
+                hint: "Used to sort articles newest to oldest. Only the year matters.",
+              },
               {
                 name: "layout",
                 widget: "select",
                 default: "../../layouts/BlogPost.astro",
                 options: [
                   { label: "General", value: "../../layouts/BlogPost.astro" },
+                ],
+              },
+            ],
+          },
+          {
+            name: "site_content",
+            label: "Site Content",
+            files: [
+              {
+                name: "homepage",
+                label: "Homepage Text",
+                file: "src/content/homepage.md",
+                fields: [
+                  {
+                    name: "whoWeAreText",
+                    widget: "text",
+                    label: "Who We Are - Paragraph",
+                  },
+                  {
+                    name: "whoWeBecameText",
+                    widget: "text",
+                    label: "Who We Became - Paragraph",
+                  },
+                ],
+              },
+              {
+                name: "adverts",
+                label: "Press & Media Adverts",
+                file: "src/content/adverts.md",
+                fields: [
+                  {
+                    name: "healthcard",
+                    widget: "image",
+                    label: "Health Card Advert",
+                  },
+                  {
+                    name: "fluvaccine",
+                    widget: "image",
+                    label: "Flu Vaccine Advert",
+                  },
                 ],
               },
             ],

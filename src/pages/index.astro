@@ -21,6 +21,9 @@ let permalink = 'https://www.hlokomela.org.za/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
+let homepageContent = await Astro.glob('../content/homepage.md');
+let { whoWeAreText, whoWeBecameText } = homepageContent[0].frontmatter;
+
 let allPosts = await Astro.glob('./posts/*.md');
 allPosts = allPosts.sort(
   (a, b) =>
@@ -49,29 +52,13 @@ allMedia = allMedia.sort(
           <div class="flex flex-col content-center pt-20 pb-20">
             <h2 class="font-bold">WHO WE ARE</h2>
             <p class="text-center">
-              Hlokomela was established in 2005 in response to research that
-              highlighted a critical need for health care among farm workers and
-              other vulnerable populations in the greater Hoedspruit area. Since
-              then, Hlokomela has been a prominent and respected role player in
-              the health and well-being of the local community, serving about 60
-              000 people annually (direct and indirect beneficiaries).
+              {whoWeAreText}
             </p>
           </div>
           <div class="flex flex-col content-center pt-5 pb-20">
             <h2 class="font-bold">WHO WE BECAME</h2>
             <p class="text-center">
-              In 2020, faced with the COVID-19 pandemic, Hlokomela capitalised
-              on its identity which has been built up over 15 years of caring.
-              Hlokomela showed its mettle by stepping up and leading the
-              COVID-19 response in Hoedspruit, Limpopo as well as in other areas
-              of the Mopani District where the organisation implements
-              programmes. We were strengthened even more as the organisation and
-              its staff were challenged in an extra-ordinary time to do
-              extra-ordinary things to maintain the high level of service
-              Hlokomela is known for. All this was achieved at the same time
-              staff and researchers worked hard at piloting a partial payment
-              system that would hopefully secure the financial viability of the
-              organisation once implemented in full.
+              {whoWeBecameText}
             </p>
           </div>
           <div class="flex flex-col md:flex-row pt-5 pb-20">

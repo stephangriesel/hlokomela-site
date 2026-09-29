@@ -21,15 +21,15 @@ export default defineConfig({
           gateway_url: "https://gateway.decapbridge.com",
           commit_messages: {
             create:
-              'Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+              "Create {{collection}} {{slug}} - {{author-name}} <{{author-login}}> via DecapBridge",
             update:
-              'Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+              "Update {{collection}} {{slug}} - {{author-name}} <{{author-login}}> via DecapBridge",
             delete:
-              'Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+              "Delete {{collection}} {{slug}} - {{author-name}} <{{author-login}}> via DecapBridge",
             uploadMedia:
-              'Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+              "Upload {{path}} - {{author-name}} <{{author-login}}> via DecapBridge",
             deleteMedia:
-              'Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+              "Delete {{path}} - {{author-name}} <{{author-login}}> via DecapBridge",
             openAuthoring:
               "Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge",
           },

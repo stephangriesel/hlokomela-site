@@ -10,11 +10,31 @@ export default defineConfig({
       },
     }),
     NetlifyCMS({
+      disableIdentityWidgetInjection: true,
       config: {
         backend: {
           name: "git-gateway",
+          repo: "stephangriesel/hlokomela-site",
           branch: "latest",
+          identity_url:
+            "https://auth.decapbridge.com/sites/4ad973b2-3e28-4dc1-9b5c-1681eb6115e2",
+          gateway_url: "https://gateway.decapbridge.com",
+          commit_messages: {
+            create:
+              'Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+            update:
+              'Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+            delete:
+              'Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+            uploadMedia:
+              'Upload "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+            deleteMedia:
+              'Delete "{{path}}" - {{author-name}} <{{author-login}}> via DecapBridge',
+            openAuthoring:
+              "Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge",
+          },
         },
+        site_url: "https://hlokomela-site.pages.dev",
         media_folder: "public/upload",
         public_folder: "/upload",
         logo_url: `https://res.cloudinary.com/stephangriesel/image/upload/v1687318146/logo_cqhhz9.png`,
